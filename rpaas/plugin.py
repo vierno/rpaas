@@ -221,7 +221,7 @@ def ssl(args):
     try:
         result = proxy_request(args.service, args.instance, rpaas_path, body=body, method=method,
                                headers={'Content-Type': 'application/x-www-form-urlencoded'})
-    except Exception, e:
+    except Exception as e:
         sys.stderr.write("ERROR: "+str(e)+"\n")
         sys.exit(1)
     if result.getcode() in [200, 201]:
